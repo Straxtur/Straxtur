@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Jorge Sánchez López — research, build with agents, some of it ships">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Straxtur — research, build with agents, some of it ships">
   <!-- Banner del README de GitHub (borrador 2026-10-31), en ámbar y negro a juego con el avatar.
        Animación en SMIL y CSS: funciona como <img>. -->
   <defs>
@@ -48,7 +48,7 @@
   <rect width="1200" height="320" rx="18" fill="url(#lampara)"/>
   <rect width="1200" height="320" rx="18" filter="url(#humo)"/>
 
-  <text x="72" y="140" class="nombre">Jorge Sánchez López</text>
+  <text x="72" y="140" class="nombre">Straxtur</text>
 
   <text x="40" y="206" class="prompt">&gt;</text>
   <g clip-path="url(#c1)"><text x="72" y="206" class="terminal">digging into things</text></g>
