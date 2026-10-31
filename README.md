@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Straxtur — research, build with agents, some of it ships" width="100%">
+  <img src="assets/banner.svg" alt="JARVIS online: messages from an AI assistant" width="100%">
 </p>
 
 ### I like digging into things.

@@ -1,74 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Straxtur — research, build with agents, some of it ships">
-  <!-- Banner del README de GitHub (borrador 2026-10-31), en ámbar y negro a juego con el avatar.
-       Animación en SMIL y CSS: funciona como <img>. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="JARVIS online: messages from an AI assistant about what it is building">
+  <!-- Banner del README de GitHub (2026-10-31, tercera versión): un asistente tipo JARVIS que le escribe.
+       Los mensajes insinúan lo que se está construyendo sin nombrarlo. Ámbar y negro, a juego con el avatar.
+       Animación en SMIL y CSS: funciona como <img>. Ciclo de mensajes: 16 s, 4 s cada uno. -->
   <defs>
     <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0b0906"/>
       <stop offset="1" stop-color="#1a120b"/>
     </linearGradient>
-    <radialGradient id="lampara" cx="0.78" cy="0.42" r="0.5">
-      <stop offset="0" stop-color="#e08a2c" stop-opacity="0.28"/>
+    <radialGradient id="lampara" cx="0.82" cy="0.5" r="0.45">
+      <stop offset="0" stop-color="#e08a2c" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#e08a2c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nucleo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff1d0"/>
+      <stop offset="0.45" stop-color="#ffcf7a"/>
       <stop offset="1" stop-color="#e08a2c" stop-opacity="0"/>
     </radialGradient>
     <filter id="humo" x="0" y="0" width="100%" height="100%">
       <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="3" seed="7">
         <animate attributeName="seed" values="7;8;9;10;7" dur="12s" repeatCount="indefinite"/>
       </feTurbulence>
-      <feColorMatrix values="0 0 0 0 0.85  0 0 0 0 0.75  0 0 0 0 0.62  0 0 0 0.09 0"/>
+      <feColorMatrix values="0 0 0 0 0.85  0 0 0 0 0.75  0 0 0 0 0.62  0 0 0 0.08 0"/>
     </filter>
-    <clipPath id="c1"><rect x="72" y="176" height="40" width="0">
-      <animate attributeName="width" values="0;300;300;0;0" keyTimes="0;0.13;0.27;0.33;1" dur="9s" begin="0s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="c2"><rect x="72" y="176" height="40" width="0">
-      <animate attributeName="width" values="0;380;380;0;0" keyTimes="0;0.13;0.27;0.33;1" dur="9s" begin="3s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="c3"><rect x="72" y="176" height="40" width="0">
-      <animate attributeName="width" values="0;490;490;0;0" keyTimes="0;0.13;0.27;0.33;1" dur="9s" begin="6s" repeatCount="indefinite"/></rect></clipPath>
-    <path id="r1" d="M 770 170 L 890 100"/>
-    <path id="r2" d="M 890 100 L 1010 170"/>
-    <path id="r3" d="M 890 100 L 1110 90"/>
+    <clipPath id="m1"><rect x="72" y="128" height="44" width="0">
+      <animate attributeName="width" values="0;600;600;0;0" keyTimes="0;0.08;0.2;0.25;1" dur="16s" begin="0s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="m2"><rect x="72" y="128" height="44" width="0">
+      <animate attributeName="width" values="0;725;725;0;0" keyTimes="0;0.08;0.2;0.25;1" dur="16s" begin="4s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="m3"><rect x="72" y="128" height="44" width="0">
+      <animate attributeName="width" values="0;740;740;0;0" keyTimes="0;0.08;0.2;0.25;1" dur="16s" begin="8s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="m4"><rect x="72" y="128" height="44" width="0">
+      <animate attributeName="width" values="0;710;710;0;0" keyTimes="0;0.08;0.2;0.25;1" dur="16s" begin="12s" repeatCount="indefinite"/></rect></clipPath>
   </defs>
   <style>
-    .nombre { font: 700 54px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f3e6d0; }
-    .terminal { font: 500 26px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #e3a857; }
-    .prompt { font: 500 26px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #7a6a55; }
-    .etiqueta { font: 600 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #e9d8bd; }
-    .etiqueta-oculta { font: 600 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #7a6a55; }
-    .nodo { fill: #140e09; stroke: #d08a35; stroke-width: 2; }
-    .nodo-oculto { fill: #0f0b07; stroke: #5a4632; stroke-width: 2; stroke-dasharray: 5 5; }
-    .linea { stroke: #4a3826; stroke-width: 2; fill: none; }
-    .linea-oculta { stroke: #3a2c1e; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
-    .pulso { fill: #ffcf7a; }
+    .asistente { font: 700 18px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #e3a857; letter-spacing: .32em; }
+    .estado { font: 500 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #7a6a55; letter-spacing: .12em; }
+    .mensaje { font: 500 26px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #f3e6d0; }
+    .escucha { font: 500 16px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #7a6a55; }
+    .hud { font: 600 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #b88a4a; letter-spacing: .14em; }
+    .anillo { fill: none; stroke: #d08a35; }
     .cursor { fill: #e3a857; animation: parpadeo 1s steps(1) infinite; }
-    .respira { animation: respira 3s ease-in-out infinite; }
+    .latido { animation: latido 2.4s ease-in-out infinite; }
+    .punto { animation: latido 1.6s ease-in-out infinite; }
     @keyframes parpadeo { 50% { opacity: 0; } }
-    @keyframes respira { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .cursor, .respira { animation: none; } }
+    @keyframes latido { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .cursor, .latido, .punto { animation: none; } }
   </style>
 
   <rect width="1200" height="320" rx="18" fill="url(#fondo)"/>
   <rect width="1200" height="320" rx="18" fill="url(#lampara)"/>
   <rect width="1200" height="320" rx="18" filter="url(#humo)"/>
 
-  <text x="72" y="140" class="nombre">Straxtur</text>
+  <!-- Quién habla -->
+  <circle cx="80" cy="76" r="6" fill="#e3a857" class="punto"/>
+  <text x="96" y="82" class="asistente">JARVIS</text>
+  <text x="206" y="82" class="estado">· online</text>
+  <line x1="72" y1="104" x2="760" y2="104" stroke="#3a2c1e" stroke-width="1"/>
 
-  <text x="40" y="206" class="prompt">&gt;</text>
-  <g clip-path="url(#c1)"><text x="72" y="206" class="terminal">digging into things</text></g>
-  <g clip-path="url(#c2)"><text x="72" y="206" class="terminal">building with AI agents</text></g>
-  <g clip-path="url(#c3)"><text x="72" y="206" class="terminal">some of it ships. some doesn't.</text></g>
-  <rect class="cursor" x="72" y="184" width="13" height="28">
-    <animate attributeName="x" values="72;372;372;72;452;452;72;562;562;72" keyTimes="0;0.043;0.09;0.11;0.153;0.2;0.22;0.263;0.31;0.333" dur="9s" repeatCount="indefinite"/>
-  </rect>
+  <!-- Lo que le escribe -->
+  <g clip-path="url(#m1)"><text x="72" y="160" class="mensaje">Good evening, sir. All systems online.<tspan class="cursor"> ▍</tspan></text></g>
+  <g clip-path="url(#m2)"><text x="72" y="160" class="mensaje">Checked 42 models overnight. 3 look good.<tspan class="cursor"> ▍</tspan></text></g>
+  <g clip-path="url(#m3)"><text x="72" y="160" class="mensaje">The east wing is nearly done. Continue?<tspan class="cursor"> ▍</tspan></text></g>
+  <g clip-path="url(#m4)"><text x="72" y="160" class="mensaje">Nobody knows this place exists. As asked.<tspan class="cursor"> ▍</tspan></text></g>
+    <text x="72" y="232" class="escucha">&gt; listening<tspan class="latido">…</tspan></text>
 
-  <!-- research → agents → ship, y una rama a lo que no se enseña -->
-  <use href="#r1" class="linea"/>
-  <use href="#r2" class="linea"/>
-  <use href="#r3" class="linea-oculta"/>
-
-  <circle r="5" class="pulso"><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle>
-  <circle r="5" class="pulso"><animateMotion dur="2.4s" begin="-1.2s" repeatCount="indefinite"><mpath href="#r2"/></animateMotion></circle>
-  <circle r="4" class="pulso" fill-opacity="0.35"><animateMotion dur="3.2s" begin="-0.6s" repeatCount="indefinite"><mpath href="#r3"/></animateMotion></circle>
-
-  <circle cx="770" cy="170" r="38" class="nodo respira"/><text x="770" y="175" text-anchor="middle" class="etiqueta">research</text>
-  <circle cx="890" cy="100" r="38" class="nodo respira" style="animation-delay:.6s"/><text x="890" y="105" text-anchor="middle" class="etiqueta">agents</text>
-  <circle cx="1010" cy="170" r="38" class="nodo respira" style="animation-delay:1.2s"/><text x="1010" y="175" text-anchor="middle" class="etiqueta">ship</text>
-  <circle cx="1110" cy="90" r="34" class="nodo-oculto"/><text x="1110" y="95" text-anchor="middle" class="etiqueta-oculta">private</text>
+  <!-- El núcleo, tipo HUD -->
+  <g transform="translate(985 160)">
+    <circle r="118" class="anillo" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="2 10">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="100" class="anillo" stroke-width="3" stroke-opacity="0.8" stroke-dasharray="120 40 40 40 220 168">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="78" class="anillo" stroke-width="2" stroke-opacity="0.55" stroke-dasharray="6 6">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="58" class="anillo" stroke-width="1.5" stroke-opacity="0.9"/>
+    <circle r="40" fill="url(#nucleo)" class="latido"/>
+    <circle r="16" fill="#fff1d0" fill-opacity="0.9"/>
+    <g stroke="#d08a35" stroke-opacity="0.6" stroke-width="2">
+      <line x1="0" y1="-58" x2="0" y2="-70"/><line x1="0" y1="58" x2="0" y2="70"/>
+      <line x1="-58" y1="0" x2="-70" y2="0"/><line x1="58" y1="0" x2="70" y2="0"/>
+    </g>
+  </g>
+  <text x="985" y="26" text-anchor="middle" class="hud">AGENTS 3 · MEMORY SYNCED</text>
+  <text x="985" y="302" text-anchor="middle" class="hud">EAST WING · 82%</text>
 </svg>
